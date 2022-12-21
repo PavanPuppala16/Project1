@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Project1.Models.Model1>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Shortlist students</title>
+</head>
+<body>
+    <meta name="viewport" content="width=device-width" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <div class="container" style="border" color="blue">
+    </div>
+
+
+
+    <h4>Student Data</h4>
+    <div class="container">
+        Student List
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Sno</th>
+
+            <th>HallTicket </th>
+            <th>Name</th>
+            <th>EmailID</th>
+            <th>Dob</th>
+            <th>Gender</th>
+            <th>StudentPHno</th>
+            <th>StudentAadhar</th>
+            <th>SchoolName</th>
+            <th>SscPassYear </th>
+            <th>SscAggregate</th>
+            <th>CollegeName</th>
+            <th>IntermediatePassYear </th>
+            <th>IntermediateAggregate</th>
+            <th>EngineeringCollegeName</th>
+            <th>Branch </th>
+            <th>EngineeringPassout</th>
+            <th>Backlog</th>
+            <th>GraduationAggregate</th>
+            <th>FathersName</th>
+            <th>PermanentAddress </th>
+            <th>FathersMobileNo</th>
+            <th>MothersName</th>
+            <th>MothersOccupation</th>
+            <th>ACCEPT</th>
+            <th>REJECT</th>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Sno</td>
+                <td>@item.HallTicket</td>
+                <td>@item.Name</td>
+                <td>@item.EmailID</td>
+                <td>@item.Dob</td>
+                <td>@item.Gender</td>
+                <td>@item.StudentPHno</td>
+                <td>@item.StudentAadhar</td>
+                <td>@item.SchoolName</td>
+                <td>@item.SscPassYear</td>
+                <td>@item.SscAggregate</td>
+                <td>@item.CollegeName</td>
+                <td>@item.IntermediatePassYear</td>
+                <td>@item.IntermediateAggregate</td>
+                <td>@item.EngineeringCollegeName</td>
+                <td>@item.Branch</td>
+                <td>@item.EngineeringPassout</td>
+                <td>@item.Backlog</td>
+                <td>@item.GraduationAggregate</td>
+
+                <td>@item.FathersName</td>
+                <td>@item.PermanentAddress</td>
+                <td>@item.FathersMobileNo</td>
+                <td>@item.MothersName</td>
+                <td>@item.MothersOccupation</td>
+                <td>
+                    @Html.ActionLink("ACCEPT","EDIT","LEVEL1", new {Sno = item.Sno},new{onclick="return confirm('are you selected to Level2')"})
+
+                </td>
+                <td>@Html.ActionLink("REJECT","DELETEDATA","LEVEL1", new { rollno= item.Sno},new{onclick="return confirm('sorry.your rejected')"}))</td>
+
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
+
+
+
+
+

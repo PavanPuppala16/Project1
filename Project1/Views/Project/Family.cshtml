@@ -1,0 +1,78 @@
+﻿@using Project1.Models
+@model Family
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>STEP1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="signup-form mt-5 border p-4 bg-light shadow">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4 class="mb-5 text-secondary">ADD Family Info</h4>
+                        <h4 class="mb-5 text-secondary">STEP4</h4>
+                        <div class="row">
+
+                            <div class="mb-6 col-md-6">
+                                <label> HTDID<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.HTDID, new { @class = "form-control", placeholder="Enter HTDID" })
+                                @Html.ValidationMessageFor(model => model.HTDID, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="mb-6 col-md-6">
+                                <label> FathersName<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.FathersName, new { @class = "form-control", placeholder="Enter FathersName" })
+                                @Html.ValidationMessageFor(model => model.FathersName, "", new { @class = "text-danger" })
+                            </div>
+                           
+                            <div class="mb-6 col-md-6">
+                                <label> PermanentAddress<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.PermanentAddress, new { @class = "form-control", placeholder="Enter PermanentAddress" })
+                                @Html.ValidationMessageFor(model => model.PermanentAddress, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-6 col-md-6">
+                                <label> FathersMobileNo<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.FathersMobileNo, new { @class = "form-control", placeholder="Enter FathersMobileNo" })
+                                @Html.ValidationMessageFor(model => model.FathersMobileNo, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-6 col-md-6">
+                                <label> MothersName<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.MothersName, new { @class = "form-control", placeholder="Enter MothersName" })
+                                @Html.ValidationMessageFor(model => model.MothersName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="mb-6 col-md-6">
+                            <label> MothersOccupation<span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(model => model.MothersOccupation, new { @class = "form-control", placeholder="Enter MothersOccupation" })
+                            @Html.ValidationMessageFor(model => model.MothersOccupation, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-7">
+                            <p class="text-center mt-3 text-secondary">  Move TO Next Page @Html.ActionLink("STEP5","Upload","File")</p>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="submit" class="btn btn-primary float-end" value="Submit" onclick="alert('DO YOU WANT SAVE YOUR DATA?')">
+
+                        </div>
+
+                    }@ViewBag.Message
+                </div>
+</body>
+
+</html>

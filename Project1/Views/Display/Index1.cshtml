@@ -1,0 +1,80 @@
+﻿@*@model IEnumerable<Project1.Models.HTDID1>
+  
+@{
+    ViewData["Title"] = "Index1";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+ 
+<h1>DisplayData</h1>
+<div class="container">
+    Welcome To Display Data Page
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>Sno</th>
+        <th>HTDID</th>
+        <th>HallTicket </th>
+        <th>Name</th>
+        <th>EmailID</th>
+        <th>Dob</th>
+        <th>Gender</th>
+        <th>StudentPHno</th>
+        <th>StudentAadhar</th>
+         <th>SchoolName</th>
+            <th>SscPassYear </th>
+            <th>SscAggregate</th>
+        <th>CollegeName</th>
+        <th>IntermediatePassYear </th>
+        <th>IntermediateAggregate</th>
+        <th>EngineeringCollegeName</th>
+        <th>Branch </th>
+        <th>EngineeringPassout</th>
+        <th>Backlog</th>
+        <th>GraduationAggregate</th>
+<th>FathersName</th>
+            <th>PermanentAddress </th>
+            <th>FathersMobileNo</th>
+            <th>MothersName</th>
+            <th>MothersOccupation</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HTDID</td>
+            <td>@item.Sno</td>
+            <td>@item.HallTicket</td>
+            <td>@item.Name</td>
+            <td>@item.EmailID</td>
+            <td>@item.Dob</td>
+            <td>@item.Gender</td>
+            <td>@item.StudentPHno</td>
+            <td>@item.StudentAadhar</td>
+            <td>@item.SchoolName</td>
+            <td>@item.SscPassYear</td>
+            <td>@item.SscAggregate</td>
+            <td>@item.CollegeName</td>
+            <td>@item.IntermediatePassYear</td>
+            <td>@item.IntermediateAggregate</td>
+            <td>@item.EngineeringCollegeName</td>
+            <td>@item.Branch</td>
+            <td>@item.EngineeringPassout</td>
+            <td>@item.Backlog</td>
+            <td>@item.GraduationAggregate</td>
+            <td>@item.HTDID</td>
+            <td>@item.FathersName</td>
+            <td>@item.PermanentAddress</td>
+            <td>@item.FathersMobileNo</td>
+            <td>@item.MothersName</td>
+            <td>@item.MothersOccupation</td>
+
+
+           
+        </tr>
+    }
+
+</table>*@

@@ -1,0 +1,118 @@
+﻿@using Project1.Models
+@model MainModel
+@{
+    ViewData["Title"] = "REGISTER";
+}
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="signup-form mt-5 border p-4 bg-light shadow">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4 class="mb-5 text-secondary">ADD USER</h4>
+                        <div class="row">
+                            
+                            <div class="mb-6 col-md-6">
+                                <label> FirstName<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder="Enter FirstName" })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-6 col-md-6">
+                                <label>LastName<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder="Enter LastName" })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-6 col-md-6">
+                                <label>EmailID<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.EmailID, new { @class = "form-control", placeholder="Enter EmailID" })
+                                @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label>Password<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder="Enter Password" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3 col-md-12">
+                                <label>Gender<span class="text-danger">*</span></label>
+                                @Html.RadioButtonFor(model => model.Gender, "MALE", new { id = "male-true"  })
+                                @Html.Label("male-true", "Male")
+                                @Html.RadioButtonFor(model => model.Gender, "FEMALE", new { id = "female-true"})
+                                @Html.Label("female-true", "Female")
+                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                            </div>
+                            <div>
+                            <div class="mb-3 col-md-6">
+                                <label>DOB<span class="text-danger">*</span></label>
+                                @Html.EditorFor(model => model.Dob, new { htmlAttributes = new { @class = "form-control input-md", @placeholder = "Dob"} })
+                                @Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger" })
+                            </div>
+                            </div>
+                            <div>
+                            <div class="mb-3 col-md-6">
+                                <label>ROLE<span class="text-danger">*</span></label>
+                                @Html.DropDownListFor(model => model.Role, new List<SelectListItem> {
+                            new SelectListItem { Text="--Select--",Value="--select--"},
+                            new SelectListItem { Text="CEO",Value="CEO"},
+                            new SelectListItem { Text="MANAGER",Value="MANAGER"},
+                            new SelectListItem { Text="TRAINER",Value="TRAINER"},
+                            new SelectListItem { Text="CO-ORDINATER",Value="CO-ORDINATER"},
+                            new SelectListItem { Text="INTERVIWER",Value="INTERVIWER"}
+
+
+                            }, new { @class = "form-control" })
+                            </div>
+                                <div class="mb-6 col-md-8">
+                            <div class="mb-3 col-md-6">
+                                <label>Status<span class="text-danger">*</span></label>
+                                @Html.DropDownListFor(m => m.Status, new List<SelectListItem>
+                            { new SelectListItem{Text="--Select--", Value="0"},
+                            new SelectListItem{Text="Active", Value="True"},
+                            new SelectListItem{Text="InActive", Value="False"}
+                            }, new { @class = "form-control" })
+                            </div>
+                            <div class="mb-6 col-md-8">
+                                        <label>InsertionDate<span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.InsertionDate, new { htmlAttributes = new { @class = "form-control input-md", @placeholder = "InsertionDate"} })
+                                        @Html.ValidationMessageFor(model => model.InsertionDate, "", new { @class = "text-danger" })
+                           </div>
+                                  
+                                    
+                       
+                                </div>
+                               
+                                <div class="col-md-7">
+                                    <p class="text-center mt-3 text-secondary">Go to Login page  @Html.ActionLink("login","login","Project")</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="submit" class="btn btn-primary float-end" value="Submit" onclick="alert('Successfully Submitted!')">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    }@ViewBag.Message
+                </div>
+</body>
+</html>

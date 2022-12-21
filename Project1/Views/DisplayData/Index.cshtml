@@ -1,0 +1,242 @@
+﻿@using Project1.Models
+@model dynamic
+@{
+    Layout = null;
+}
+
+
+<meta name="viewport" content="width=device-width" />
+<title>display</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+@*<script>
+    $(document).ready(function () {
+
+        $("#button1").click(function () {
+            $("#div1").load("/Task/Insert");
+        });
+
+    });
+</script>
+<script>
+    $(document).ready(function () {
+
+        $("#button2").click(function () {
+            $("#div2").load("/Task/InsertFamily");
+        });
+
+    });
+</script>*@
+<asp:Scripmanager id="script1" runat="server">
+    <div class="container" font-weight:bold;>
+    </div>
+   
+    <table class="table table-success table-striped">
+
+        <tr>
+            <th>Sno</th>
+            <th>HTDID</th>
+            <th>HallTicket </th>
+            <th>Name</th>
+            <th>EmailID</th>
+            <th>Dob</th>
+            <th>Gender</th>
+            <th>StudentPHno</th>
+            <th>StudentAadhar</th>
+
+
+        </tr>
+
+        @foreach (GenericInfo CUSTOMER in Model.GenericInfo)
+        {
+            <tr>
+                <td>@CUSTOMER.HTDID</td>
+                <td>@CUSTOMER.Sno</td>
+                <td>@CUSTOMER.HallTicket</td>
+                <td>@CUSTOMER.Name</td>
+                <td>@CUSTOMER.EmailID</td>
+                <td>@CUSTOMER.Dob</td>
+                <td>@CUSTOMER.Gender</td>
+                <td>@CUSTOMER.StudentPHno</td>
+                <td>@CUSTOMER.StudentAadhar</td>
+            </tr>
+        }
+        <tr>
+           @* <button type="button" id="button1"> +ADD ADDRESS</button>
+
+            <div id="div1"></div>*@
+    </table>
+
+    <hr />
+
+
+
+    <meta name="viewport" content="width=device-width" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <div class="container" style="border" color="blue">
+    </div>
+
+    @*<button type="button" id="button2"> +ADD FAMILY</button>
+
+    <div id="div2"></div>*@
+    <table class="table table-success table-striped">
+        <tr>
+            <th>HTDID</th>
+            <th>SchoolName</th>
+            <th>SscPassYear </th>
+            <th>SscAggregate</th>
+
+        </tr>
+        @foreach (Schooling Schooling in Model.Schooling)
+        {
+            <tr>
+                 <td>@Schooling.HTDID</td>
+                <td>@Schooling.SchoolName</td>
+                <td>@Schooling.SscPassYear</td>
+                <td>@Schooling.SscAggregate</td>
+
+            </tr>
+        }
+    </table>
+    <meta name="viewport" content="width=device-width" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <div class="container" style="border" color="blue">
+    </div>
+
+    @*<button type="button" id="button2"> +ADD FAMILY</button>
+
+    <div id="div2"></div>*@
+    <table class="table table-success table-striped">
+        <tr>
+            <th>HTDID</th>
+            <th>CollegeName</th>
+            <th>IntermediatePassYear </th>
+            <th>IntermediateAggregate</th>
+
+        </tr>
+        @foreach (Intermediate Obj2 in Model.Intermediate)
+        {
+            <tr>
+                <td>@Obj2.HTDID</td>
+                <td>@Obj2.CollegeName</td>
+                <td>@Obj2.IntermediatePassYear</td>
+                <td>@Obj2.IntermediateAggregate</td>
+
+            </tr>
+        }
+    </table>
+
+
+
+    <meta name="viewport" content="width=device-width" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <div class="container" style="border" color="blue">
+    </div>
+
+    @*<button type="button" id="button2"> +ADD FAMILY</button>
+
+    <div id="div2"></div>*@
+    <table class="table table-success table-striped">
+        <tr>
+            <th>HTDID</th>
+            <th>EngineeringCollegeName</th>
+            <th>Branch </th>
+            <th>EngineeringPassout</th>
+            <th>Backlog</th>
+            <th>GraduationAggregate</th>
+
+        </tr>
+        @foreach (Graduation Obj3 in Model.Graduation)
+        {
+            <tr>
+
+                <td>@Obj3.HTDID</td>
+                <td>@Obj3.EngineeringCollegeName</td>
+                <td>@Obj3.Branch</td>
+                <td>@Obj3.EngineeringPassout</td>
+                <td>@Obj3.Backlog</td>
+                <td>@Obj3.GraduationAggregate</td>
+              
+            </tr>
+        }
+    </table>
+
+
+
+    <meta name="viewport" content="width=device-width" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <div class="container" style="border" color="blue">
+    </div>
+
+    @*<button type="button" id="button2"> +ADD FAMILY</button>
+
+    <div id="div2"></div>*@
+    <table class="table table-success table-striped">
+        <tr>
+            
+            <th>HTDID</th>
+            <th>FathersName</th>
+            <th>PermanentAddress </th>
+            <th>FathersMobileNo</th>
+            <th>MothersName</th>
+            <th>MothersOccupation</th>
+
+        </tr>
+        @foreach (Family obj4 in Model.Family)
+        {
+            <tr>
+                <td>@obj4.HTDID</td>
+                <td>@obj4.FathersName</td>
+                <td>@obj4.PermanentAddress</td>
+                <td>@obj4.FathersMobileNo</td>
+                <td>@obj4.MothersName</td>
+                <td>@obj4.MothersOccupation</td>
+
+            </tr>
+        }
+    </table>
+
+</asp:Scripmanager>
+
+
+
+
+

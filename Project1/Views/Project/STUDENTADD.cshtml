@@ -1,0 +1,104 @@
+﻿@using Project1.Models
+@model GenericInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>STEP1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="signup-form mt-5 border p-4 bg-light shadow">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4 class="mb-5 text-secondary">ADD Student Info</h4>
+                        <h4 class="mb-5 text-secondary">STEP1</h4>
+                        <div class="row">
+                             <div class="mb-6 col-md-6">
+                                <label> HTDID<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.HTDID, new { @class = "form-control", placeholder="Enter HTDID" })
+                                @Html.ValidationMessageFor(model => model.HTDID, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-6 col-md-6">
+                                <label> HallTicket<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.HallTicket, new { @class = "form-control", placeholder="Enter HallTicket" })
+                                @Html.ValidationMessageFor(model => model.HallTicket, "", new { @class = "text-danger" })
+                            </div>
+                            <div>
+                            <div class="mb-6 col-md-6">
+                                <label>LastName<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Enter Name" })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                            </div>
+                            <div class="mb-6 col-md-6">
+                                <label>EmailID<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.EmailID, new { @class = "form-control", placeholder="Enter EmailID" })
+                                @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+                            </div>
+                            <div>
+                                <div class="mb-3 col-md-6">
+                                    <label>DOB<span class="text-danger">*</span></label>
+                                    @Html.EditorFor(model => model.Dob, new { htmlAttributes = new { @class = "form-control input-md", @placeholder = "Dob"} })
+                                    @Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div>
+                            <div class="mb-3 col-md-12">
+                                <label>Gender<span class="text-danger">*</span></label>
+                                @Html.RadioButtonFor(model => model.Gender, "MALE", new { id = "male-true"  })
+                                @Html.Label("male-true", "Male")
+                                @Html.RadioButtonFor(model => model.Gender, "FEMALE", new { id = "female-true"})
+                                @Html.Label("female-true", "Female")
+                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                            </div>
+                            </div>
+                            <div class="mb-6 col-md-6">
+                                <label>StudentPHno<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.StudentPHno, new { @class = "form-control", placeholder="Enter StudentPHno" })
+                                @Html.ValidationMessageFor(model => model.StudentPHno, "", new { @class = "text-danger" })
+                            </div>
+                            <div>
+                             <div class="mb-6 col-md-6">
+                                <label>StudentAadhar<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.StudentAadhar, new { @class = "form-control", placeholder="Enter StudentAadhar" })
+                                @Html.ValidationMessageFor(model => model.StudentAadhar, "", new { @class = "text-danger" })
+                            </div>
+                            </div>
+                                </div>
+
+                        <div class="col-md-7">
+                            <p class="text-center mt-3 text-secondary">Move TO Next Page  @Html.ActionLink("STEP2","SSCDetails","Project")</p>
+                        </div>
+
+                      
+                       
+                            
+                                
+                                <div class="col-md-5">
+                                    <input type="submit" class="btn btn-primary float-end" value="Submit" onclick="alert('DO YOU WANT AVE YOUR DATA?')">
+
+                                </div>
+                           
+                    }@ViewBag.Message
+                </div>
+</body>
+
+
